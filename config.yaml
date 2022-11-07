@@ -1,0 +1,41 @@
+DatabaseSettings:
+  Address: 127.0.0.1
+  Port: 1325
+  User:
+  Password:
+  DBName: Gooj
+
+LogSettings:
+  OutputLevel: Debug #记录在文件error.log中的级别，可选Debug Info Warn Error DPanic Panic Fatal
+  LogFile:
+    LogPath: /home/Gooj/src/log/ #指定日志保存路径，如果不填写则仅在stdout输出
+    MaxSize: 128 # 每个日志文件保存的大小 单位:M (如果不指明保存路径该字段无效)
+    MaxAge: 7 # 文件最多保存多少天 (如果不指明保存路径该字段无效)
+    MaxBackups: 30 # 日志文件最多保存多少个备份 (如果不指明保存路径该字段无效)
+    Compress: false # 是否压缩 (如果不指明保存路径该字段无效)
+
+EnvironmentSettings:
+  TempCodeStoragePath: /tmp/gooj/
+  Sandbox:
+    BinaryPath: /home/Gooj/sandbox/executorserver-amd64
+    StorageTimeout: 43200m
+    Address: 127.0.0.1
+    Port: 5050
+    TimeLimit: 16000 # 等待时间限制，单位ms
+    MemoryLimit: 512 # 内存限制MB
+    StackLimit: 256 # 栈内存限制MB
+    ProcLimit: 50 # 线程数量限制
+    CpuRateLimit: 200 # 仅 Linux，CPU 使用率限制，1000 等于单核 100%
+  Golang:
+    GoPath: #如果已经在path内则放空
+    GocodePath: #如果已经在path内则放空
+    GofmtPath: #如果已经在path内则放空
+
+JwtSettings:
+  PrivateKey: Hbds3udjSur #如果为空
+  Issuer: Owl #如果为空就默认为Nzxy
+  ExpireTimeout: 3600
+
+ExperimentalSettings:
+  EnableAutoFmt: false
+  DisableCaptcha: true
